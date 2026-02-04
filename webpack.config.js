@@ -5,11 +5,11 @@ const isDevelopment = process.env.NODE_ENV !== "production";
 
 module.exports = {
   mode: isDevelopment ? "development" : "production",
-  entry: path.resolve(__dirname, "src", "index.js"), // 👈 punto de entrada
+  entry: path.resolve(__dirname, "src", "index.js"),
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "bundle.js",
-    publicPath: "/" // 👈 importante para evitar MIME type errors
+    publicPath: "/" 
   },
   module: {
     rules: [
@@ -39,7 +39,7 @@ module.exports = {
       directory: path.resolve(__dirname, "public")
     },
     hot: true,
-    port: 3000 // 👈 cambia el puerto aquí
+    port: 3000 
   },
   resolve: {
     extensions: [".js", ".jsx"]
