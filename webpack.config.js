@@ -28,12 +28,15 @@ module.exports = {
             ].filter(Boolean)
           }
         }
+      },{
+        test: /\.css$/i, use: ["style-loader", "css-loader"]
       }
     ]
   },
   plugins: [
     isDevelopment && new ReactRefreshWebpackPlugin()
   ].filter(Boolean),
+  
   devServer: {
     static: {
       directory: path.resolve(__dirname, "public")
@@ -43,5 +46,6 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx"]
-  }
+  },
+  
 };

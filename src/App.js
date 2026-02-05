@@ -1,5 +1,6 @@
 import React, {useEffect,useState} from "react";
-import keycloack from './auth/login/login';
+import keycloack from './auth/core/login/login';
+import Nav from './auth/core/nav/Nav';
 function App() {
  const [authenticated, setAuthenticated] = useState(false);
 
@@ -12,7 +13,7 @@ function App() {
 
  
   return(
-    <p>Bienvenido  </p>
+   <Nav />
    
   )
 }
