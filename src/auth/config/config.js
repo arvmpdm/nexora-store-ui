@@ -1,12 +1,11 @@
 module.exports={
     debugMode:false,
-    enviroment:dev,
     autentication:{
         api: "http://localhost:9080",
         realm:"sflt",
         clientId:"sflt-panda-front"
     },
     nexora:{
-        api:'http://localhost:3017/nexora/app/'
+        api:'http://127.0.0.1:8080/nexora-store-api/nexora'
     }
 }
