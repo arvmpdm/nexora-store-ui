@@ -6,8 +6,8 @@ class ApiInvoker {
 
     getApiHeader(){
         return {
-            'Content-Type':'application/json',
-            authorization: window.localStorage.getItem('token'),
+            'Content-Type':'application/json'
+            //authorization: window.localStorage.getItem('token'),
         }
     }
 
@@ -48,21 +48,20 @@ class ApiInvoker {
             console.log(params.body);
         }
 
-        fetch('${configuration.nexora.api}${url}',params)
-        .then((response)=> {
-            if(debug){
-                console.log("Invoke Response => ",response);
-            }
+        fetch(`${configuration.nexora.api}${url}`,params)
+        .then(response => {
+            if(!response.ok){
+                console.log(`Error HTTP: ${response.status}`)
+            } 
             return response.json();
-        }).then((responseData) => {
+        })
+        .then((responseData)=>{
             if(responseData.ok){
                 okCallback(responseData);
-            }else {
+            } else {
                 failCallback(responseData);
             }
         })
-
-
     }
 }
-export default new ApiInvoker;
+export default new ApiInvoker();
