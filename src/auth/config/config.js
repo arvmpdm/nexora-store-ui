@@ -6,7 +6,7 @@ module.exports={
         clientId:"sflt-panda-front"
     },
     nexora:{
-        api: "http://127.0.0.1:8080/jakarta-rest-service/nexora"
+        api: "http://127.0.0.1:8080/nexora-store-api/nexora"
        // api:'http://127.0.0.1:8080/nexora-store-api/nexora'
     }
 }
